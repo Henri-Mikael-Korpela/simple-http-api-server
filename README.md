@@ -4,7 +4,7 @@ A simple HTTP API server written in C.
 
 ## Running the server
 
-There are instructions for starting the server below. After you have successfully started the server, you may navigate to `localhost:<PORT>/example.html` to see an example page.
+There are instructions for starting the server below. After you have successfully started the server, you may navigate to `http://localhost:<PORT>/example.html` to see an example page.
 
 ### Linux
 
