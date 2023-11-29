@@ -18,7 +18,7 @@
 #define BUFFER_SIZE 104857600
 
 char const *get_mime_type(char const *file_ext);
-void *handle_client(void *arg);
+void *handle_client_request(void *arg);
 char *url_decode(char const *src);
 
 int main(int argc, char *argv[])
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 
         // Create a new thread with a specific thread ID.
         pthread_t thread_id;
-        pthread_create(&thread_id, NULL, handle_client, (void *)client_file_descriptor);
+        pthread_create(&thread_id, NULL, handle_client_request, (void *)client_file_descriptor);
 
         // Deallocation note: when the thread is detached, client file descriptor is freed.
         pthread_detach(thread_id);
@@ -192,7 +192,7 @@ char const *get_mime_type(char const *file_ext)
         return "application/octet-stream";
     }
 }
-void *handle_client(void *arg)
+void *handle_client_request(void *arg)
 {
     int client_file_descriptor = *((int *)arg);
     char *buffer = (char *)malloc(BUFFER_SIZE * sizeof(char));
