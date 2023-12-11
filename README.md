@@ -2,6 +2,13 @@
 
 A simple HTTP API server written in C.
 
+## Prerequisites
+
+- C compiler (GCC, tested on version 11.3.0)
+- Bash (for Linux, development distro is Ubuntu 22.04)
+
+All development and testing is performed on Linux. Therefore there are no specific instructions for other operating systems, but it may be possible to run the server on other operating systems.
+
 ## Running the server
 
 There are instructions for starting the server below. After you have successfully started the server, you may navigate to any of the following URLs:
